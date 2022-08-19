@@ -10,6 +10,7 @@
 		from
 		VOL_WANT
 		where VOL_NO is not null
+		order by VOL_NO desc
 	</select>
 
 	<select id="selectVolWantMemberListCount" resultType="int">

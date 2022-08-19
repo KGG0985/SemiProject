@@ -32,7 +32,7 @@ public class LoginAction implements Action {
    
    public String process(HttpServletRequest request, HttpServletResponse response) throws Exception{
 
-      String url = "redirect:/";
+      String url = "redirect:/index.do";
       
       //입력
       String memId = request.getParameter("id");

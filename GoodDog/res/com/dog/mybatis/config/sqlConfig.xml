@@ -19,8 +19,7 @@
 		<typeAlias type="com.dog.dto.admin.AdminVO"  alias="admin"/>
 		<typeAlias type="com.dog.dto.adoptwant.AdoptWantVO"  alias="want"/>
 		<typeAlias type="com.dog.dto.report.ReportVO" alias="report"/>
-		<typeAlias type="com.dog.vo.qnaboard.QnaVO"  alias="qna"/>
-
+		<typeAlias type="com.dog.dto.qnaboard.QnaVO"  alias="qna"/>
   	</typeAliases>
   	
   	

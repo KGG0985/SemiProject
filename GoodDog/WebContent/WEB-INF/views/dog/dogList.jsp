@@ -8,89 +8,92 @@
 <c:set var="dogList" value="${dataMap.dogList }" />
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AdminLTE 3 | Starter</title>
-<link rel="stylesheet" type="text/css"
-   href="<%=request.getContextPath()%>/resources/css/default.css">
-<link rel="stylesheet" type="text/css"
-   href="<%=request.getContextPath()%>/resources/css/style.css">
-<link rel="stylesheet" type="text/css"
-   href="<%=request.getContextPath()%>/resources/css/index.css">
-<link rel="stylesheet" type="text/css"
-   href="<%=request.getContextPath()%>/resources/css/sub.css">
-<link rel="stylesheet"
-   href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-<link rel="stylesheet"
-   href="<%=request.getContextPath()%>/resources/bootstrap/plugins/fontawesome-free/css/all.min.css">
-<link rel="stylesheet"
-   href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
+<meta charset="UTF-8">
+<title>세상에 나쁜개는 없다</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/default.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/sub.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/plugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition sidebar-mini">
+<body>
+<!-- 헤더영역 -->
+	<header>
+		<hr/>
+		<div id="top">
+			<a href="<%=request.getContextPath()%>/index.do"><img alt="메인로고" src="<%=request.getContextPath()%>/resources/images/mainlogo.JPG"></a>
+		</div>
+	</header>
 
-   <header id="header">
-      <h2 class="hide">대메뉴</h2>
-      <div id="lnb">
-         <nav>
-            <ul>
-               <li><a href="#a">ABOUT US</a>
+	<div id="header" class="index">
+
+		<h2 class="hide">대메뉴(Hide)</h2>
+		<div id="lnb">
+			<nav>
+				<ul>
+				<li><a>ABOUT US</a>
+					<ul>
+					<li><a href="<%=request.getContextPath()%>/aboutus/map.do">기관 및 구성원소개</a></li>
+					</ul>
+				</li>
+				<li><a>유기견 등록 / 제보</a>
+					<ul>
+					<li><a href="<%=request.getContextPath()%>/report/reportList.do">유기동물 제보</a></li>
+					</ul>
+				</li>
+				<li><a>입양신청</a>
+					<ul>
+					<li><a href="<%=request.getContextPath()%>/adoptwant/adoptwantlist.do">입양신청목록</a></li>
+					<li><a href="<%=request.getContextPath()%>/adoptwant/adoptwantform.do">입양신청서 등록</a></li>
+					<li><a href="<%=request.getContextPath()%>/dog/doglist.do">등록 유기동물현황</a></li>
+					</ul>
+				</li>
+				<li><a>자원봉사 모집/신청</a>
+					<ul>
+					<li><a href="<%=request.getContextPath()%>/volunteer/volunteerList.do">봉사 신청자</a></li>
+					<li><a href="<%=request.getContextPath()%>/vol/calendarList.do">봉사 일정알림</a></li>
+					</ul>
+				</li>
+				<li><a>세나개 소식지</a>
+					<ul>
+					<li><a>입양 후기</a></li>
+					<li><a>입양 전후 갤러리</a></li>
+					<li><a>정보 공유</a></li>
+					<li><a>유의 사항</a></li>
+					</ul>
+				</li>
+				<li><a>고객센터</a>
+					<ul>
+					<li><a href="<%=request.getContextPath()%>/qnaBoard/list.do">문의사항</a></li>
+					</ul>
+				</li>
+				<li><a href="<%=request.getContextPath()%>">LOGIN / JOIN US</a>
+				<c:if test="${empty loginUser && empty loginAdmin }">
                   <ul>
-                     <li><a href="#a">연혁 & 비전</a></li>
-                     <li><a href="#a">기관 및 구성원소개</a></li>
-                     <li><a href="#a">제공서비스 및 혜택</a></li>
-                  </ul></li>
-               <li><a href="#a">유기견 등록/제보</a>
+                  <li><a href="<%=request.getContextPath()%>/loginForm.do">LOGIN</a></li>      
+                  <li><a href="<%=request.getContextPath()%>/member/registForm.do">JOIN</a></li>
+                  </ul>
+                </c:if>
+                <c:if test="${!empty loginUser || !empty loginAdmin }">
                   <ul>
-                     <li><a href="#a">유기동물 제보</a></li>
-                     <li><a href="#a">분실동물 등록</a></li>
-                  </ul></li>
-               <li><a href="#a">입양신청</a>
-                  <ul>
-                     <li><a href="#a">입양신청서 등록</a></li>
-                     <li><a href="doglist.do">등록 유기동물현황</a></li>
-                  </ul></li>
-               <li><a href="#a">자원봉사 모집/신청</a>
-                  <ul>
-                     <li><a href="#a">봉사 신청</a></li>
-                     <li><a href="#a">봉사 신청자</a></li>
-                     <li><a href="#a">봉사 일정알림</a></li>
-                  </ul></li>
-               <li><a href="#a">세나개 소식지</a>
-                  <ul>
-                     <li><a href="#a">입양 후기</a></li>
-                     <li><a href="#a">입양 전후 갤러리</a></li>
-                     <li><a href="#a">정보 공유</a></li>
-                     <li><a href="#a">유의 사항</a></li>
-                  </ul></li>
-               <li><a href="#a">고객센터</a>
-                  <ul>
-                     <li><a href="#a">문의사항</a></li>
-                     <li><a href="#a">불만접수</a></li>
-                  </ul></li>
-            </ul>
-         </nav>
+                  <li><a href="#a">${ loginUser.memName }</a></li>
+                  <li><a href="#a">${ loginAdmin.adminName }</a></li>
+                  <li><a href="#" onclick="location.href='<%=request.getContextPath() %>/logout.do';">로그아웃</a></li>
+                </c:if>
+				</li>
+				</ul>
+			</nav>
          <div></div>
       </div>
       <div class="visual">
          <img
-            src="<%=request.getContextPath()%>/resources/images/subBackground.jpg"
+            src="<%=request.getContextPath()%>/resources/images/subBackGround10.jpg"
             alt="">
       </div>
-   </header>
- 		<div class="bread_crumbs">
-			<div>
-				<a href="dogmain.do">홈</a>
-				<div>
-					<a href="#a">세상에 나쁜개는 없다</a>
-					<ul>
-					<li><a href="#a">입양신청</a></li>
-					<li><a href="doglist.do">등록 유기동물 현황</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
 	<div >
       <!-- Main content -->
       <section class="content-header">
@@ -122,10 +125,11 @@
                      <!-- sort num -->
                      <select class="form-control col-md-3" name="perPageNum"
                         id="perPageNum" onchange="list_go(1);">
-                        <option value="10" ${cri.perPageNum eq 10 ? 'selected' : '' }>정렬개수</option>
-                        <option value="2" ${cri.perPageNum eq 2 ? 'selected' : '' }>2개씩</option>
-                        <option value="3" ${cri.perPageNum eq 3 ? 'selected' : '' }>3개씩</option>
-                        <option value="5" ${cri.perPageNum eq 5 ? 'selected' : '' }>5개씩</option>
+                        <option value="4" ${cri.perPageNum eq 4 ? 'selected' : '' }>4개씩</option>
+                        <option value="8" ${cri.perPageNum eq 8 ? 'selected' : '' }>8개씩</option>
+                        <option value="12" ${cri.perPageNum eq 12 ? 'selected' : '' }>12개씩</option>
+                        <option value="16" ${cri.perPageNum eq 16 ? 'selected' : '' }>16개씩</option>
+                        <option value="20" ${cri.perPageNum eq 20 ? 'selected' : '' }>20개씩</option>
                      </select>
 
 
@@ -157,23 +161,22 @@
                   <c:if test="${!empty dogList }">
                      <c:forEach items="${dogList }" var="dog">
                            <div class="col-sm-3">
-                              <div class="card">
-                                 <div class="embed-responsive embed-responsive-4by3">
-                                    <img style="width: 100%; height: 70%; cursor: pointer;"
+                              <div class="card" >
+                                 <div class="embed-responsive embed-responsive-4by3" style="height:520px;">
+                                    	<img style="width: 100%; height: auto; cursor: pointer;  overflow:hidden;"
                                        class="card-img-top embed-responsive-item"
                                        src="<%=request.getContextPath()%>/resources/images/upload/${dog.dogPic}"
                                        class="card-img-top" alt="..."
                                        onclick="OpenWindow('dogdetail.do?dogNo=${dog.dogNo}','보호견 상세',700,800);">
+                                 </div>
                                     <div class="card-body">
                                        <h5 class="card-text">${dog.dogName }-${dog.dogBreed }</h5>
                                        <p class="card-text">${dog.dogGender }
                                           <br> ${dog.dogFeature }
                                        </p>
-                                       <a style="background-color: #D2B48C; border: none; "class="btn btn-primary" 
-                                       onclick="OpenWindow('<%=request.getContextPath()%>/adoptwant/adoptwantform.do','입양 신청',600,500);">
+                                       <a href="<%=request.getContextPath()%>/adoptwant/adoptwantform.do"; style="background-color: #D2B48C; border: none; "class="btn btn-primary"> 
                                        	입양 &nbsp;&nbsp;신청</a>
                                     </div>
-                                 </div>
                               </div>
                            </div>
                      </c:forEach>

@@ -85,6 +85,24 @@
 	<!-- /.login-box -->
 	
 <script>
+const input = document.querySelector('#myInput');
+input.addEventListener('keypress',function(e){
+    if (e.keyCode === 13) {
+       if(document.log_frm.id.value.length == 0){
+          document.getElementById('pw_check_msg').innerHTML = "아이디를 입력해주세요!";
+    /*       alert("아이디를 입력해주세요!") */
+          log_frm.id.focus();
+          return;
+       }
+       if(document.log_frm.pwd.value.length == 0){
+    /*       alert("비밀번호를 입력해주세요!") */
+          document.getElementById('pw_check_msg').innerHTML = "비밀번호를 입력해주세요!";
+          log_frm.pwd.focus();
+          return;
+       }
+       document.log_frm.submit();
+  }  
+});   
 	
 function infoConfirm() {
 		

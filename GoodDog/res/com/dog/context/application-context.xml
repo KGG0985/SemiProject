@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans>
-
 	<!-- datasource -->
 	<bean id="sqlSessionFactory"
 		class="com.dog.datasource.OracleMybatisSqlSessionFactory">
@@ -23,19 +22,20 @@
 	<bean id="memberDAO"  class="com.dog.dao.member.MemberDAOImpl" />
 	
 	<bean id="adminDAO"  class="com.dog.dao.admin.AdminDAOImpl" />
+	
 	<bean id="adoptWantDAO" class="com.dog.dao.adoptwant.AdoptWantDAOImpl">
 		<property name="sqlSessionFactory"
 			ref-value="sqlSessionFactory" />
 	</bean>		
+	
 	<bean id="reportDAO" class="com.dog.dao.report.ReportDAOImpl">
 		<property name="sqlSessionFactory"
 			ref-value="sqlSessionFactory" />
 	</bean>
-			
 	<bean id="qnaDAO" class="com.dog.dao.qnaboard.QnaDAOImpl" >
 		<property name="sqlSessionFactory" ref-value="sqlSessionFactory" />
 	</bean>
-	
+			
 	<!-- Service -->
 	<bean id="dogService"
 		class="com.dog.service.happydog.DogServiceImpl">
@@ -56,10 +56,12 @@
 		<property name="sqlSessionFactory" ref-value="sqlSessionFactory" />
 		<property name="adminDAO" ref-value="adminDAO" />
 	</bean>
-		<bean id="adoptWantService"
+	
+	<bean id="adoptWantService"
 		class="com.dog.service.adoptwant.AdoptWantServiceImpl">
 		<property name="adoptWantDAO" ref-value="adoptWantDAO" />
 	</bean>
+	
 	<bean id="reportService"
 		class="com.dog.service.report.ReportServiceImpl">
 		<property name="reportDAO" ref-value="reportDAO" />
@@ -68,6 +70,4 @@
 	<bean id="qnaService" class="com.dog.service.qnaboard.QnaServiceImpl" >
 		<property name="qnaDAO" ref-value="qnaDAO" /> 
 	</bean>
-	
-	
 </beans>

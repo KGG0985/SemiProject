@@ -14,7 +14,7 @@
 #header > ul li:first-child a:before { background-position: 0 0;}
 #header > ul li:last-child a:before { background-position:-23px 0;}
 #header #lnb { position: absolute; left: 0; top: 480; z-index: 30; /* padding: 0 232px; */ width: 100%; box-sizing: border-box;}
-#header #lnb nav { position: relative; z-index: 30; border-bottom: 9px solid #D2B48C; text-align: center; font-size: 0; width: 100%;}
+#header #lnb nav { position: relative; z-index: 30; border-bottom: 0px solid #D2B48C; text-align: center; font-size: 0; width: 100%;}
 #header #lnb nav > ul { display: inline-block; overflow: hidden; height:70px; transition: all 0.5s;}
 #header #lnb nav > ul:hover { overflow: visible;}
 #header #lnb nav + div { position: absolute; left: 0; top: 0; z-index: 29; /* padding: 0 30px; */ width: 100%; height:0; background: #D2B48C; opacity: 0; transition: all .5s; box-sizing: border-box; background-clip: content-box;}

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Map;
 
 import com.dog.command.Criteria;
-import com.dog.vo.qnaboard.QnaVO;
+import com.dog.dto.qnaboard.QnaVO;
 
 public interface QnaService {
 

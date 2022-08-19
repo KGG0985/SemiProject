@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.dog.command.Criteria;
-import com.dog.vo.qnaboard.QnaVO;
+import com.dog.dto.qnaboard.QnaVO;
 
 public class QnaDAOImpl implements QnaDAO {
 

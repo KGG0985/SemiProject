@@ -95,13 +95,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									style="color: red; font-weight: bold;">*</span>봉사 내용
 								</label>
 								<div class="col-sm-9 input-group-sm">
-									<input name="volContent" type="text"
-										class="form-control" id="volContent"
-										value="${volunteer.volContent }"  />
+									<textarea cols="30" rows="5" >
+									${volunteer.volContent }
+								</textarea>
+								
+								
+								
+<!-- 									<input name="volContent" type="text" -->
+<!-- 										class="form-control" id="volContent" -->
+<%-- 										value="${volunteer.volContent }"  /> --%>
 								</div>
 
 							</div>
-
 							<div class="card-footer">
 								<div class="row">
 									<div class="col-sm-6">

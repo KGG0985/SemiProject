@@ -122,6 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						</div>
 						
 						
+						
 						<div class="card-footer">
 							<div class="row">								
 								<div class="col-sm-6">

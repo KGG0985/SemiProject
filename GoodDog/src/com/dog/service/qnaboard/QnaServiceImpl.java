@@ -8,7 +8,7 @@ import java.util.Map;
 import com.dog.command.PageMaker;
 import com.dog.dao.qnaboard.QnaDAO;
 import com.dog.command.Criteria;
-import com.dog.vo.qnaboard.QnaVO;
+import com.dog.dto.qnaboard.QnaVO;
 
 public class QnaServiceImpl implements QnaService {
 

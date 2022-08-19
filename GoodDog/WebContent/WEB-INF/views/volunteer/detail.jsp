@@ -82,9 +82,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									style="color: red; font-weight: bold;">*</span>봉사 내용
 								</label>
 								<div class="col-sm-9 input-group-sm">
-									<input class="form-control" name="volContent" type="text"
-										class="form-control" id="volContent"
-										value="${volunteer.volContent }" readonly />
+								
+								<textarea cols="30" rows="5" readonly>
+									${volunteer.volContent }
+								</textarea>
+								
+								
+<!-- 									<input class="form-control" name="volContent" type="text" style="width:250px;height:200px;  -->
+<!-- 										class="form-control" id="volContent" -->
+<%-- 										value="${volunteer.volContent }" readonly /> --%>
 								</div>
 
 							</div>

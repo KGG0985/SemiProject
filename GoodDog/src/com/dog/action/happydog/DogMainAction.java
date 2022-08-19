@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.dog.action.Action;
 import com.dog.command.Criteria;
 import com.dog.service.happydog.DogService;
+import com.dog.service.report.ReportService;
 
 public class DogMainAction implements Action {
 	
@@ -17,9 +18,14 @@ public class DogMainAction implements Action {
 		this.service = service;
 	}
 	
+	private ReportService reportService;
+	public void setReportService(ReportService reportService) {
+		this.reportService = reportService;
+	}
+	
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String url = "/dog/dogMain";
+		String url = "/index";
 
 		String pageParam = request.getParameter("page");
 		String perPageNumParam = request.getParameter("perPageNum");
@@ -50,6 +56,8 @@ public class DogMainAction implements Action {
 		try {
 			Map<String,Object> dataMap = service.getDogList(cri);
 			request.setAttribute("dataMap", dataMap);
+			Map<String, Object> dataMap2 = reportService.getReportList(cri);
+			request.setAttribute("dataMap2", dataMap2);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			url = "/error/500";
